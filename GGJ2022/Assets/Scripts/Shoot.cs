@@ -8,5 +8,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+            Instantiate(projectile, transform.position, transform.rotation);
     }
 }
