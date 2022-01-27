@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        lookDirection = Input.GetAxis("Horizontal");
+        lookDirection = Input.GetAxis("Horizontal"); // this won't work if the player stops moving, we need facing direction
         transform.position = new Vector3(transform.position.x + lookDirection * speed, transform.position.y, transform.position.z);
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             Jump();
