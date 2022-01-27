@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 193423330391258644}
   - component: {fileID: 193423330391258645}
   - component: {fileID: -6612219511413101420}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlusProjectile
   m_TagString: Positive
   m_Icon: {fileID: 0}
