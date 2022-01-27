@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public float cameraDistance = 10f;
     public Transform Player;
     void Awake()
     {
@@ -13,6 +14,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = new Vector3(Player.transform.position.x, Player.position.y, Player.transform.position.z - 10f);
+        transform.position = new Vector3(Player.transform.position.x, Player.position.y, Player.transform.position.z - cameraDistance);
     }
 }
