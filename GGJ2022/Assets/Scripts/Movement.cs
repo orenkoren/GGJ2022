@@ -12,7 +12,8 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         speed = 1f;
-        jumpStrength = 1f;
+        jumpStrength = 100f;
+        isGrounded = true;
     }
     private void FixedUpdate()
     {
@@ -24,19 +25,16 @@ public class Movement : MonoBehaviour
 
     private void Jump()
     {
-        GetComponent<Rigidbody>().AddForce(new Vector2(jumpStrength, 0));
+        GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
+        isGrounded = false;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollision(Collision collider)
     {
-        if (other.gameObject.tag == "Ground")
+        Debug.Log("Collided with: " + collider.gameObject.tag);
+        if (collider.gameObject.tag == "Ground")
+        {
             isGrounded = true;
-
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.tag == "Ground")
-            isGrounded = false;
+        }
     }
 }
