@@ -8,12 +8,18 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        int direction = 1;
-        if(GetComponent<Movement>().GetLookDirection() < 1) // shoot left
-        {
-            direction = -1;
-        }
         if (Input.GetKeyDown(KeyCode.LeftAlt))
-            Instantiate(projectile, transform.position, transform.rotation);
+        {
+            GameObject projective = Instantiate(projectile, transform.position, transform.rotation);
+            int direction = 1;
+            if (GetComponent<Movement>().GetLookDirection() > 0)
+            {
+                direction = -1;
+            }
+            else if(GetComponent<Movement>().GetLookDirection() < 0)
+            {
+                direction = 1;
+            }
+        }
     }
 }

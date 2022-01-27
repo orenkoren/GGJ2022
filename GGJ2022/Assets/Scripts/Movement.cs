@@ -14,12 +14,11 @@ public class Movement : MonoBehaviour
         speed = 1f;
         jumpStrength = 400f;
         isGrounded = true;
-        lookDirection = 1;
     }
     private void FixedUpdate()
     {
         lookDirection = Input.GetAxis("Horizontal");
-        transform.position = new Vector2(transform.position.x + lookDirection * speed, transform.position.y);
+        transform.position = new Vector3(transform.position.x + lookDirection * speed, transform.position.y, transform.position.z);
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             Jump();
     }
@@ -29,7 +28,6 @@ public class Movement : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
         isGrounded = false;
     }
-
     private void OnCollisionEnter(Collision collider)
     {
         Debug.Log("Collided with: " + collider.gameObject.tag);
