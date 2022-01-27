@@ -14,6 +14,11 @@ public class Projectile : MonoBehaviour
              transform.position.y, transform.position.z), step);
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        print(other.gameObject.name);
+    }
+
     void OnBecameInvisible()
     {
         Destroy(gameObject);
