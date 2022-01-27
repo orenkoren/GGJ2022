@@ -7,8 +7,8 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        print(other.gameObject.name);
-        if (orientation == ElectricCharge.Positive && other.gameObject.CompareTag("Positive"))
+        print(other.gameObject.tag);
+        if (other.gameObject.CompareTag(orientation.ToString()))
             Destroy(gameObject);
     }
 }

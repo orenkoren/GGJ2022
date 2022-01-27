@@ -30,7 +30,6 @@ public class Movement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collider)
     {
-        Debug.Log("Collided with: " + collider.gameObject.tag);
         if (collider.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;

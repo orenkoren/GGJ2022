@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public GameObject projectile;
+    public GameObject positiveProjectile;
+    public GameObject negativeProjectile;
+
+    private GameObject currentProjectile;
+
+    private void Start()
+    {
+        currentProjectile = positiveProjectile;
+    }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+            currentProjectile = currentProjectile == positiveProjectile ? currentProjectile = negativeProjectile : currentProjectile = positiveProjectile;
+
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            GameObject projective = Instantiate(projectile, transform.position, transform.rotation);
+            GameObject projective = Instantiate(currentProjectile, transform.position, transform.rotation);
             int direction = 1;
             if (GetComponent<Movement>().GetLookDirection() > 0)
             {
