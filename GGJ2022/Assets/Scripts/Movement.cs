@@ -22,11 +22,6 @@ public class Movement : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
             lookDirection = Input.GetAxis("Horizontal");
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
-    }
-
-    private void Update()
-    {
-
         jumpSpeedDefine();
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {

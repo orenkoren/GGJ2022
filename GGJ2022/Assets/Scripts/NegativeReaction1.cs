@@ -23,16 +23,6 @@ public class NegativeReaction1 : MonoBehaviour
         shouldApplyBerzerkEffect = true;
     }
 
-    private void Update()
-    {
-        if (shouldApplyBerzerkEffect)
-        {
-            var lookDir = GetComponent<Enemy>().GetLookDirection();
-            GetComponent<Rigidbody>().AddForce(new Vector3(lookDir == LookDirection.Left ? pushbackForce : pushbackForce * -1, 0, 0));
-        }
-        shouldApplyBerzerkEffect = false;
-    }
-
     private IEnumerator BerzerkDuration()
     {
         float counter = 0;
