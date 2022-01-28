@@ -11,7 +11,12 @@ public class Movement : MonoBehaviour
     private float lookDirection;
     private float fallSpeed = 3.5f;
     private float jumpSpeed = 2f;
+    private Vector3 respawnPoint;
 
+    private void Start()
+    {
+        respawnPoint = transform.position;
+    }
     private void FixedUpdate()
     {
         if (Input.GetAxis("Horizontal") != 0)
@@ -53,6 +58,10 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collider.gameObject.CompareTag("RespawnPoint"))
+        {
+            changeRespawnPoint();
+        }
         if (collider.gameObject.CompareTag("PositiveEnemy")||
             collider.gameObject.CompareTag("NegativeEnemy"))
         {
@@ -67,10 +76,15 @@ public class Movement : MonoBehaviour
             isGrounded = false;
         }
     }
+    private void changeRespawnPoint()
+    {
+        respawnPoint = transform.position;
+    }
+
     private void respwan()
     {
         Debug.Log("Respawn");
-        transform.position = Manager.GetComponent<PlayerManager>().GetRespawnPosition();
+        transform.position = respawnPoint;
     }
 
     public LookDirection GetLookDirection()
