@@ -55,14 +55,7 @@ public class Enemy : MonoBehaviour
             {
                 isPositive = false;
             }
-            var all = FindObjectsOfType<GameObject>();
-            foreach (var item in all)
-            {
-                if (item.transform.CompareTag("Manager"))
-                {
-                    item.GetComponent<EnemiesRespawnManager>().AddEnemyToRespawnList(transform.position, isPositive);
-                }
-            }
+            GameWorld.Instance.GetManager<EnemiesRespawnManager>().AddEnemyToRespawnList(transform.position, isPositive);
             Destroy(gameObject);
         }
             
