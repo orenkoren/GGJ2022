@@ -44,5 +44,6 @@ public class EnemiesRespawnManager : MonoBehaviour
                 Instantiate(NegativeEnemyPref, enemy.spawnPosition, new Quaternion(0, 0, 0, 0));
             }
         }
+        EnemiesToRspawn.Clear();
     }
 }
