@@ -29,6 +29,15 @@ public class Movement : MonoBehaviour
         {
             Jump();
         }
+        if(GetLookDirection() == LookDirection.Left)
+        {
+            transform.rotation = new Quaternion(0,180,0,0);
+        }
+        else
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+
+        }
     }
     private void jumpSpeedDefine()
     {
