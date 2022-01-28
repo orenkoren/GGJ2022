@@ -10,8 +10,6 @@ public class Movement : MonoBehaviour
     private float lookDirection;
     public float FallSpeed;
     public float JumpSpeed;
-
-    private string lastPlatform;
     private Vector3 respawnPoint;
 
     private void Start()
@@ -55,7 +53,6 @@ public class Movement : MonoBehaviour
         if (collider.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            lastPlatform = collider.transform.name;
         }
         if (collider.gameObject.CompareTag("RespawnPoint"))
         {
@@ -70,7 +67,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionExit(Collision collider)
     {
-        if (collider.gameObject.CompareTag("Ground") && lastPlatform == collider.transform.name)
+        if (collider.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }
