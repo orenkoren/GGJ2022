@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: 1
-  speed: 10
+  Speed: 5
+  PatrolRadius: 5
 --- !u!54 &863438161
 Rigidbody:
   m_ObjectHideFlags: 0

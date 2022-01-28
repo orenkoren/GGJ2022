@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class EndlessSpawner : MonoBehaviour
 {
     public GameObject toSpawn;
@@ -25,8 +25,8 @@ public class EndlessSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!hasActivated)
+        /*if(!hasActivated)
             Instantiate(toSpawn, location.position, location.rotation);
         hasActivated = true;
     }
-}
+}*/

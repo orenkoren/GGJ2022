@@ -21,7 +21,6 @@ public class NegativeReaction1 : MonoBehaviour
         isBerzerk = true;
         gameObject.transform.localScale *= 2;
         StartCoroutine(BerzerkDuration());
-        GetComponent<Enemy>().SetMoving(false);
         shouldApplyBerzerkEffect = true;
     }
 
@@ -48,7 +47,6 @@ public class NegativeReaction1 : MonoBehaviour
         print("stop");
         isBerzerk = false;
         gameObject.transform.localScale /= 2;
-        GetComponent<Enemy>().SetMoving(true);
     }
 
     private void OnCollisionEnter(Collision collision)
