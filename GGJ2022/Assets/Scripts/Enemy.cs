@@ -6,14 +6,14 @@ public class Enemy : MonoBehaviour
     public float Speed;
     public float PatrolRadius;
 
-    private new Vector3 startPosition;
+    private Vector3 startPosition;
     private PlayerManager playerManager;
     private bool shouldMove = true;
     private bool moveRight = true;
 
     private void Start()
     {
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
     }
 
     private void Update()
@@ -21,24 +21,24 @@ public class Enemy : MonoBehaviour
         var step = Speed * Time.deltaTime;
         if (moveRight)
         {
-            transform.position = Vector3.MoveTowards(transform.position,
-                new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z), step);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition,
+                new Vector3(transform.localPosition.x + 0.5f, transform.localPosition.y, transform.localPosition.z), step);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position,
-                new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z), step);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition,
+                new Vector3(transform.localPosition.x - 0.5f, transform.localPosition.y, transform.localPosition.z), step);
         }
         moveDirection();
     }
 
     private void moveDirection()
     {
-        if (transform.position.x >= startPosition.x + PatrolRadius)
+        if (transform.localPosition.x >= startPosition.x + PatrolRadius)
         {
             moveRight = false;
         }
-        else if (transform.position.x <= startPosition.x - PatrolRadius)
+        else if (transform.localPosition.x <= startPosition.x - PatrolRadius)
         {
             moveRight = true;
         }
