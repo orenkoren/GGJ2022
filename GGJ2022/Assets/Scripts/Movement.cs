@@ -9,36 +9,38 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded;
     private float lookDirection;
-    private float fallSpeed = 3.5f;
-    private float jumpSpeed = 2f;
+    public float FallSpeed;
+    public float JumpSpeed;
+    private Vector3 respawnPoint;
 
+    private void Start()
+    {
+        respawnPoint = transform.position;
+    }
     private void FixedUpdate()
     {
         if (Input.GetAxis("Horizontal") != 0)
             lookDirection = Input.GetAxis("Horizontal");
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
+        jumpSpeedDefine();
     }
-
     private void Update()
     {
-
-        jumpSpeedDefine();
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
         }
     }
-
     private void jumpSpeedDefine()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb.velocity.y < 0) // on the air
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * fallSpeed * Time.deltaTime;
+            rb.velocity += Vector3.up * Physics.gravity.y * FallSpeed * Time.deltaTime;
         }
         else if(rb.velocity.y > 0 && !Input.GetButton ("Jump"))
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * jumpSpeed * Time.deltaTime;
+            rb.velocity += Vector3.down * Physics.gravity.y * JumpSpeed * Time.deltaTime;
         }
     }
 
@@ -52,6 +54,10 @@ public class Movement : MonoBehaviour
         if (collider.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+        if (collider.gameObject.CompareTag("RespawnPoint"))
+        {
+            changeRespawnPoint();
         }
         if (collider.gameObject.CompareTag("PositiveEnemy")||
             collider.gameObject.CompareTag("NegativeEnemy"))
@@ -75,10 +81,15 @@ public class Movement : MonoBehaviour
             isGrounded = true;
         }
     }
+    private void changeRespawnPoint()
+    {
+        respawnPoint = transform.position;
+    }
+
     private void respwan()
     {
         Debug.Log("Respawn");
-        transform.position = Manager.GetComponent<PlayerManager>().GetRespawnPosition();
+        transform.position = respawnPoint;
     }
 
     public LookDirection GetLookDirection()
