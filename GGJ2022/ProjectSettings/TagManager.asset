@@ -8,6 +8,7 @@ TagManager:
   - Positive
   - Negative
   - PositiveEnemy
+  - NegativeEnemy
   layers:
   - Default
   - TransparentFX
