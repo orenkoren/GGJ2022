@@ -17,7 +17,6 @@ public class NegativeReaction1 : MonoBehaviour
 
     private void Berzerk(object sender, int e)
     {
-        print("berzerk");
         isBerzerk = true;
         gameObject.transform.localScale *= 2;
         StartCoroutine(BerzerkDuration());
@@ -29,7 +28,6 @@ public class NegativeReaction1 : MonoBehaviour
         if (shouldApplyBerzerkEffect)
         {
             var lookDir = GetComponent<Enemy>().GetLookDirection();
-            print(lookDir);
             GetComponent<Rigidbody>().AddForce(new Vector3(lookDir == LookDirection.Left ? pushbackForce : pushbackForce * -1, 0, 0));
         }
         shouldApplyBerzerkEffect = false;
@@ -44,7 +42,6 @@ public class NegativeReaction1 : MonoBehaviour
             counter += Time.deltaTime;
             yield return null;
         }
-        print("stop");
         isBerzerk = false;
         gameObject.transform.localScale /= 2;
     }
