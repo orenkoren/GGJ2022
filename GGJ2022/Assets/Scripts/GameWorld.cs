@@ -19,4 +19,10 @@ public class GameWorld : MonoBehaviour
     {
         return GetComponent<T>();
     }
+
+    public bool CollidedWithOpoositeCharge(ElectricCharge current, GameObject other)
+    {
+        return current == ElectricCharge.Positive && other.gameObject.CompareTag(ElectricCharge.Negative.ToString()) ||
+                    current == ElectricCharge.Negative && other.gameObject.CompareTag(ElectricCharge.Positive.ToString());
+    }
 }

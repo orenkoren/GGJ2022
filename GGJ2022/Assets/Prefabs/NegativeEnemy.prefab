@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 7801076776680337780}
   - component: {fileID: 6413918429045197331}
   - component: {fileID: 863438161}
-  m_Layer: 3
+  - component: {fileID: -6790130771709973491}
+  - component: {fileID: -8369000604542090476}
+  m_Layer: 9
   m_Name: NegativeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,3 +131,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &-6790130771709973491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698071998216240323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4545bf2b212b954497b50b0a04efbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  pushbackForce: 1000
+--- !u!114 &-8369000604542090476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698071998216240323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34df2a778003b148b41174c70e5a9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

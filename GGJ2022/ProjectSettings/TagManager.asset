@@ -7,17 +7,18 @@ TagManager:
   - Ground
   - Positive
   - Negative
+  - PositiveEnemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemies
+  - PositiveEnemies
   - Water
   - UI
   - Player
   - Projectiles
   - Ground
-  - 
+  - NegativeEnemies
   - 
   - 
   - 
