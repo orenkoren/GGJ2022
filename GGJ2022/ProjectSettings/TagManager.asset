@@ -10,6 +10,7 @@ TagManager:
   - PositiveEnemy
   - NegativeEnemy
   - RespawnPoint
+  - Manager
   layers:
   - Default
   - TransparentFX
