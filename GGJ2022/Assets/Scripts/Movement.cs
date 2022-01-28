@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -7,6 +8,8 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded;
     private float lookDirection;
+    private float fallSpeed = 3.5f;
+    private float jumpSpeed = 2f;
 
     private void FixedUpdate()
     {
@@ -17,8 +20,26 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+
+        jumpSpeedDefine();
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
             Jump();
+        }
+    }
+
+    private void jumpSpeedDefine()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb.velocity.y < 0) // on the air
+        {
+            Debug.Log("velocity: " + rb.velocity.y);
+            rb.velocity += Vector3.up * Physics.gravity.y * fallSpeed * Time.deltaTime;
+        }
+        else if(rb.velocity.y > 0 && !Input.GetButton ("Jump"))
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * jumpSpeed * Time.deltaTime;
+        }
     }
 
     private void Jump()
