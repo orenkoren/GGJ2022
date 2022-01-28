@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-/*
+
 public class EndlessSpawner : MonoBehaviour
 {
     public GameObject toSpawn;
@@ -16,7 +14,7 @@ public class EndlessSpawner : MonoBehaviour
         if (!hasActivated)
             return;
         counter += Time.deltaTime;
-        if(counter >= interval)
+        if (counter >= interval)
         {
             counter = 0;
             Instantiate(toSpawn, location.position, location.rotation);
@@ -25,8 +23,8 @@ public class EndlessSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if(!hasActivated)
+        if (!hasActivated)
             Instantiate(toSpawn, location.position, location.rotation);
         hasActivated = true;
     }
-}*/
+}

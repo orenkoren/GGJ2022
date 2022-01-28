@@ -11,14 +11,20 @@ public class Shoot : MonoBehaviour
     public Material PositiveWeapon;
    
     private GameObject currentProjectile;
+    private bool canShoot = true;
+    private PlayerManager playerManager;
 
     private void Start()
     {
         currentProjectile = positiveProjectile;
+        playerManager = GameWorld.Instance.GetManager<PlayerManager>();
+        playerManager.SetPlayerCharge(ElectricCharge.Positive);
     }
 
     private void Update()
     {
+        if (!canShoot)
+            return;
         if (Input.GetKeyDown(KeyCode.Q))
         {
              GetComponent<MeshRenderer>().material = NegativeWeapon;
@@ -26,10 +32,12 @@ public class Shoot : MonoBehaviour
             {
                 currentProjectile = negativeProjectile;
                 GetComponent<MeshRenderer>().material = PositiveWeapon;
+                playerManager.SetPlayerCharge(ElectricCharge.Negative);
             }
             else
             {
                 currentProjectile = positiveProjectile;
+                playerManager.SetPlayerCharge(ElectricCharge.Positive);
             }
         }
 
@@ -39,5 +47,15 @@ public class Shoot : MonoBehaviour
             projectile.GetComponent<Projectile>().Init(Player.GetComponent<Movement>().GetLookDirection() == LookDirection.Left ? -1 : 1);
             
         }
+    }
+
+    public void EnableWeapons()
+    {
+        canShoot = true;
+    }
+
+    public void DisableWeapons()
+    {
+        canShoot = false;
     }
 }

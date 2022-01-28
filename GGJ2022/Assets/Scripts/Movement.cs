@@ -22,9 +22,9 @@ public class Movement : MonoBehaviour
             lookDirection = Input.GetAxis("Horizontal");
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
         jumpSpeedDefine();
-        if(transform.position.y <= -3)
+        if(transform.position.y <= -30)
         {
-            respwan();
+            Respawn();
         }
     }
     private void Update()
@@ -70,7 +70,7 @@ public class Movement : MonoBehaviour
         if (collider.gameObject.CompareTag("PositiveEnemy")||
             collider.gameObject.CompareTag("NegativeEnemy"))
         {
-            respwan();
+            Respawn();
         }
     }
 
@@ -102,7 +102,7 @@ public class Movement : MonoBehaviour
         respawnPoint = transform.position;
     }
 
-    private void respwan()
+    private void Respawn()
     {
         Debug.Log("Respawn");
         GameWorld.Instance.RespawnEnemies();
