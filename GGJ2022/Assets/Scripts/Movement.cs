@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public GameObject Manager;
     public float speed;
     public float jumpStrength;
 
