@@ -23,12 +23,14 @@ public class Movement : MonoBehaviour
             lookDirection = Input.GetAxis("Horizontal");
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
         jumpSpeedDefine();
+    }
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
         }
     }
-
     private void jumpSpeedDefine()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -38,7 +40,7 @@ public class Movement : MonoBehaviour
         }
         else if(rb.velocity.y > 0 && !Input.GetButton ("Jump"))
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * JumpSpeed * Time.deltaTime;
+            rb.velocity += Vector3.down * Physics.gravity.y * JumpSpeed * Time.deltaTime;
         }
     }
 

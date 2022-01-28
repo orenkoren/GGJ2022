@@ -3076,13 +3076,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320944, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320944, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320944, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320944, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320945, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320945, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320945, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320946, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: Manager
       value: 
       objectReference: {fileID: 1522730710}
     - target: {fileID: 8319710597838320946, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: FallSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320946, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: JumpSpeed
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320946, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: fallSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320946, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: jumpSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320946, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: jumpStrength
-      value: 15000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320949, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_Name
