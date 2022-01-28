@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -9,16 +7,16 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded;
     private float lookDirection;
-    private void Start()
-    {
-        speed = 1f;
-        jumpStrength = 400f;
-        isGrounded = true;
-    }
+
     private void FixedUpdate()
     {
-        lookDirection = Input.GetAxis("Horizontal"); // this won't work if the player stops moving, we need facing direction
-        transform.position = new Vector3(transform.position.x + lookDirection * speed, transform.position.y, transform.position.z);
+        if (Input.GetAxis("Horizontal") != 0)
+            lookDirection = Input.GetAxis("Horizontal");
+        transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
+    }
+
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             Jump();
     }
@@ -26,8 +24,8 @@ public class Movement : MonoBehaviour
     private void Jump()
     {
         GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
-        isGrounded = false;
     }
+
     private void OnCollisionEnter(Collision collider)
     {
         if (collider.gameObject.CompareTag("Ground"))
@@ -35,8 +33,23 @@ public class Movement : MonoBehaviour
             isGrounded = true;
         }
     }
-    public float GetLookDirection()
+
+    private void OnCollisionExit(Collision collider)
     {
-        return lookDirection;
+        if (collider.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
+
+    public LookDirection GetLookDirection()
+    {
+        return lookDirection < 0 ? LookDirection.Left : LookDirection.Right;
+    }
+}
+
+public enum LookDirection
+{
+    Left,
+    Right
 }

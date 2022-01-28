@@ -16,21 +16,14 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Q))
             currentProjectile = currentProjectile == positiveProjectile ? currentProjectile = negativeProjectile : currentProjectile = positiveProjectile;
 
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            GameObject projective = Instantiate(currentProjectile, transform.position, transform.rotation);
-            int direction = 1;
-            if (GetComponent<Movement>().GetLookDirection() > 0)
-            {
-                direction = -1;
-            }
-            else if(GetComponent<Movement>().GetLookDirection() < 0)
-            {
-                direction = 1;
-            }
+            GameObject projectile = Instantiate(currentProjectile, transform.position, transform.rotation);
+            projectile.GetComponent<Projectile>().Init(GetComponent<Movement>().GetLookDirection() == LookDirection.Left ? -1 : 1);
+            
         }
     }
 }
