@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float PatrolRadius;
 
     private Vector3 startPosition;
+    private Vector3 lastPosition;
     private PlayerManager playerManager;
     private bool shouldMove = true;
     private bool moveRight = true;
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
                 new Vector3(transform.localPosition.x - 0.5f, transform.localPosition.y, transform.localPosition.z), step);
         }
         moveDirection();
+        lastPosition = transform.position;
     }
 
     private void moveDirection()
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour
         {
             moveRight = false;
         }
-        else if (transform.localPosition.x <= startPosition.x - PatrolRadius)
+        else if (transform.localPosition.x <= startPosition.x)
         {
             moveRight = true;
         }

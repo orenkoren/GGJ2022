@@ -21,15 +21,15 @@ public class Shoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-             GetComponent<MeshRenderer>().material = NegativeWeapon;
             if (currentProjectile == positiveProjectile)
             {
                 currentProjectile = negativeProjectile;
-                GetComponent<MeshRenderer>().material = PositiveWeapon;
+                GetComponent<MeshRenderer>().material = NegativeWeapon;
             }
             else
             {
                 currentProjectile = positiveProjectile;
+                GetComponent<MeshRenderer>().material = PositiveWeapon;
             }
         }
 
