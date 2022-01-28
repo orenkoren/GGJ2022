@@ -6,12 +6,8 @@ public class Enemy : MonoBehaviour
     public float Speed;
     public float PatrolRadius;
 
-<<<<<<< HEAD
-    private new Vector3 startPosition;
-=======
     private Vector3 startPosition;
     private PlayerManager playerManager;
->>>>>>> 2bbce5c52616b9abe18358d3f081720b4959868f
     private bool shouldMove = true;
     private bool moveRight = true;
 
@@ -55,7 +51,7 @@ public class Enemy : MonoBehaviour
         if (GameWorld.Instance.CollidedWithOpoositeCharge(orientation, other.gameObject))
         {
             bool enemyIsPositive = true;
-            if(transform.CompareTag("NegativeEnemy"))
+            if (transform.CompareTag("NegativeEnemy"))
             {
                 enemyIsPositive = false;
             }
@@ -69,11 +65,12 @@ public class Enemy : MonoBehaviour
             }
             Destroy(gameObject);
         }
-}
+    }
 
 
-public enum ElectricCharge
-{
-    Positive,
-    Negative
+    public enum ElectricCharge
+    {
+        Positive,
+        Negative
+    }
 }
