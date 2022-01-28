@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fede1597445f5044b7ab1c80f752f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {x: 7.63, y: 3.8, z: -32.76}
+  cameraOffset: {x: 8.03, y: 1.6, z: -50.95}
   Player: {fileID: 712171427}
 --- !u!81 &1695712434
 AudioListener:
