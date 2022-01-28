@@ -66,11 +66,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+}
 
-
-    public enum ElectricCharge
-    {
-        Positive,
-        Negative
-    }
+public enum ElectricCharge
+{
+    Positive,
+    Negative
 }
