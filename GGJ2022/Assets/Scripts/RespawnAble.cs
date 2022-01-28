@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RespawnAble : MonoBehaviour
-{    
+{
+    private Vector3 startPosition;
     void Start()
     {
-        GameWorld.Instance.GetManager<RespawnManager>().AddObjectToRespawnList(transform.position, transform.name, gameObject);
+        startPosition = transform.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameWorld.Instance.GetManager<RespawnManager>().AddObjectToRespawnList(startPosition, transform.name);
     }
 }

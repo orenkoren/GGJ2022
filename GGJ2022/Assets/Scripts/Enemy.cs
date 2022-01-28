@@ -50,12 +50,7 @@ public class Enemy : MonoBehaviour
             GetComponent<EnemyEvents>().CollidedWithSameCharge(this, 0);
         if (GameWorld.Instance.CollidedWithOpoositeCharge(orientation, other.gameObject))
         {
-            bool isPositive = true;
-            if(transform.CompareTag("NegativeEnemy"))
-            {
-                isPositive = false;
-            }
-            GameWorld.Instance.GetManager<RespawnManager>().AddObjectToRespawnList(transform.position, transform.tag, gameObject);
+            GameWorld.Instance.GetManager<RespawnManager>().AddObjectToRespawnList(transform.position, transform.tag);
             Destroy(gameObject);
         }
             

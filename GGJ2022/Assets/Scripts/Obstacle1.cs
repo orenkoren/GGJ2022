@@ -22,9 +22,18 @@ public class Obstacle1 : MonoBehaviour
             return;
         float step = speed * Time.deltaTime;
         if(!hasReached)
-        transform.position = Vector3.MoveTowards(transform.position, destination.position, step);
+        {
+            transform.position = Vector3.MoveTowards(transform.position, destination.position, step);
+        }
         if (hasReached)
+        {
             transform.position = Vector3.MoveTowards(transform.position, originalPosition, step);
+        }
+        if (originalPosition == transform.position)
+        {
+            hasActivated = false;
+            hasReached = false;
+        }
 
     }
 

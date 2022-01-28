@@ -18,27 +18,24 @@ public class RespawnManager : MonoBehaviour
 
     public class Respawn
     {
-        public Respawn(Vector3 pos, string name, GameObject i_gameObject)
+        public Respawn(Vector3 pos, string name)
         {
             SpawnPosition = pos;
             Name = name;
-            gameObject = i_gameObject;
         }
         public Vector3 SpawnPosition;
         public string Name;
-        public GameObject gameObject;
     }
 
-    public void AddObjectToRespawnList(Vector3 pos, string name, GameObject gameObject)
+    public void AddObjectToRespawnList(Vector3 pos, string name)
     {
-        ObjectToRspawn.Add(new Respawn(pos, name, gameObject));
+        ObjectToRspawn.Add(new Respawn(pos, name));
     }
 
     public void RespawnObjects()
     {
         foreach (Respawn objToRespawn in ObjectToRspawn)
         {
-            Debug.Log(objToRespawn.gameObject.transform.name + " Has Respawn");
             if (objToRespawn.Name == "PositiveEnemy")
             {
                 Instantiate(PositiveEnemyPref, objToRespawn.SpawnPosition, new Quaternion(0, 0, 0, 0));
@@ -47,9 +44,11 @@ public class RespawnManager : MonoBehaviour
             {
                 Instantiate(NegativeEnemyPref, objToRespawn.SpawnPosition, new Quaternion(0, 0, 0, 0));
             }
-            else
+            else if (objToRespawn.Name == "Platform")
             {
-                objToRespawn.gameObject.transform.position = objToRespawn.SpawnPosition;
+                GameObject obj = GameObject.Find("Platform");
+                Debug.Log(obj.transform.name + " Respawn!~!");
+                obj.transform.position = objToRespawn.SpawnPosition;
             }
         }
         ObjectToRspawn.Clear();
