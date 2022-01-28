@@ -143,8 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce761316fe78ab4792adb622978b944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 0}
   speed: 0.2
-  jumpStrength: 10000
+  jumpStrength: 12000
   FallSpeed: 5
-  JumpSpeed: -2
+  JumpSpeed: -1
