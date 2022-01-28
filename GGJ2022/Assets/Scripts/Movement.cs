@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public GameObject Manager;
     public float speed;
     public float jumpStrength;
 
@@ -52,6 +53,11 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collider.gameObject.CompareTag("PositiveEnemy")||
+            collider.gameObject.CompareTag("NegativeEnemy"))
+        {
+            respwan();
+        }
     }
 
     private void OnCollisionExit(Collision collider)
@@ -60,6 +66,11 @@ public class Movement : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+    private void respwan()
+    {
+        Debug.Log("Respawn");
+        transform.position = Manager.GetComponent<PlayerManager>().GetRespawnPosition();
     }
 
     public LookDirection GetLookDirection()
