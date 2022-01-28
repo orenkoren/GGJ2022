@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
             {
                 isPositive = false;
             }
-            GameWorld.Instance.GetManager<EnemiesRespawnManager>().AddEnemyToRespawnList(transform.position, isPositive);
+            GameWorld.Instance.GetManager<RespawnManager>().AddObjectToRespawnList(transform.position, transform.tag, gameObject);
             Destroy(gameObject);
         }
             

@@ -37,7 +37,7 @@ public class Obstacle1 : MonoBehaviour
         if (collision.gameObject.transform == destination)
         {
             hasReached = true;
-            Destroy(collision.gameObject);
+            collision.transform.position = GameWorld.GarbagePosition(); // change position and not destroy to avoid prefab instance for respawn
         }
     }
 }

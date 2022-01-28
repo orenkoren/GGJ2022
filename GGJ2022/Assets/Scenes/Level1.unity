@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1505,8 +1505,9 @@ GameObject:
   - component: {fileID: 1029814649}
   - component: {fileID: 1029814648}
   - component: {fileID: 1029814647}
+  - component: {fileID: 1029814650}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1520,8 +1521,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029814645}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 58.9, y: -6.14, z: 1.7973337}
-  m_LocalScale: {x: 6.2580004, y: 1, z: 1}
+  m_LocalPosition: {x: 58.8883, y: -5.77, z: 1.7973337}
+  m_LocalScale: {x: 4.8587117, y: 0.9767, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720523915}
@@ -1590,6 +1591,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029814645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1029814650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029814645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f243544f965507f42b82b65917975c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1033913790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,8 +2007,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158533493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 74.14, y: -8.833922, z: 1.7973337}
-  m_LocalScale: {x: 29.11, y: 1, z: 1}
+  m_LocalPosition: {x: 73.3704, y: -8.833922, z: 1.7973337}
+  m_LocalScale: {x: 30.649918, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720523915}
@@ -2944,7 +2957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fede1597445f5044b7ab1c80f752f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {x: 10.4, y: 0.9, z: -53.19}
+  cameraOffset: {x: 10.4, y: 0.9, z: -20}
   Player: {fileID: 712171427}
 --- !u!81 &1695712434
 AudioListener:
@@ -3333,7 +3346,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1795618148
 GameObject:
@@ -4036,11 +4049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 105.6
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.1
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_LocalPosition.z
