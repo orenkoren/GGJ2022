@@ -116,6 +116,7 @@ MonoBehaviour:
   orientation: 1
   Speed: 5
   PatrolRadius: 5
+  EnemiesManager: {fileID: 8590917505340455511, guid: ca65ec1d67b213c48a8f1c4cb1bff428, type: 3}
 --- !u!54 &863438161
 Rigidbody:
   m_ObjectHideFlags: 0

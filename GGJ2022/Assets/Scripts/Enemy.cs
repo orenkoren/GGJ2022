@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public float PatrolRadius;
 
     private new Vector3 startPosition;
-    private PlayerManager playerManager;
     private bool shouldMove = true;
     private bool moveRight = true;
 
@@ -49,8 +48,22 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag(orientation.ToString()))
             GetComponent<EnemyEvents>().CollidedWithSameCharge(this, 0);
         if (GameWorld.Instance.CollidedWithOpoositeCharge(orientation, other.gameObject))
+        {
+            bool enemyIsPositive = true;
+            if(transform.CompareTag("NegativeEnemy"))
+            {
+                enemyIsPositive = false;
+            }
+            var all = FindObjectsOfType<GameObject>();
+            foreach (var obje in all)
+            {
+                if (obje.transform.CompareTag("Manager"))
+                {
+                    obje.GetComponent<EnemiesRespawnManager>().AddEnemyToRespawnList(startPosition, enemyIsPositive);
+                }
+            }
             Destroy(gameObject);
-
+        }
     }
 }
 
