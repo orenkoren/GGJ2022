@@ -923,7 +923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413918429045197331, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
       propertyPath: Speed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6413918429045197331, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
       propertyPath: m_Enabled
@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 1102472518}
   - component: {fileID: 1102472517}
   - component: {fileID: 1102472516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Respawn
   m_TagString: RespawnPoint
   m_Icon: {fileID: 0}
@@ -1613,7 +1613,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102472514}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.08, y: 52.54, z: 2.27}

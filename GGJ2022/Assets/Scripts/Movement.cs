@@ -63,10 +63,6 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (collider.gameObject.CompareTag("RespawnPoint"))
-        {
-            changeRespawnPoint();
-        }
         if (collider.gameObject.CompareTag("PositiveEnemy")||
             collider.gameObject.CompareTag("NegativeEnemy"))
         {
@@ -79,6 +75,14 @@ public class Movement : MonoBehaviour
         if (collider.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("RespawnPoint"))
+        {
+            changeRespawnPoint();
         }
     }
 
