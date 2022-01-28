@@ -52,11 +52,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
 
     }
-
-    public LookDirection GetLookDirection()
-    {
-        return (playerManager.GetPlayerPosition() - transform.position).normalized.x > 0 ? LookDirection.Right : LookDirection.Left;
-    }
 }
 
 

@@ -9,8 +9,8 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded;
     private float lookDirection;
-    private float fallSpeed = 3.5f;
-    private float jumpSpeed = 2f;
+    public float FallSpeed;
+    public float JumpSpeed;
     private Vector3 respawnPoint;
 
     private void Start()
@@ -39,11 +39,11 @@ public class Movement : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb.velocity.y < 0) // on the air
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * fallSpeed * Time.deltaTime;
+            rb.velocity += Vector3.up * Physics.gravity.y * FallSpeed * Time.deltaTime;
         }
         else if(rb.velocity.y > 0 && !Input.GetButton ("Jump"))
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * jumpSpeed * Time.deltaTime;
+            rb.velocity += Vector3.up * Physics.gravity.y * JumpSpeed * Time.deltaTime;
         }
     }
 
