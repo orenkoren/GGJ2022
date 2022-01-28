@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb.velocity.y < 0) // on the air
         {
-            Debug.Log("velocity: " + rb.velocity.y);
             rb.velocity += Vector3.up * Physics.gravity.y * fallSpeed * Time.deltaTime;
         }
         else if(rb.velocity.y > 0 && !Input.GetButton ("Jump"))
