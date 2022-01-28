@@ -67,6 +67,14 @@ public class Movement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (GetComponent<Collider>().gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
     private void respwan()
     {
         Debug.Log("Respawn");
