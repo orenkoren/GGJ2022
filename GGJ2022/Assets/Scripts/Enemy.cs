@@ -49,9 +49,24 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag(orientation.ToString()))
             GetComponent<EnemyEvents>().CollidedWithSameCharge(this, 0);
         if (GameWorld.Instance.CollidedWithOpoositeCharge(orientation, other.gameObject))
+        {
+            bool isPositive = true;
+            if(transform.CompareTag("NegativeEnemy"))
+            {
+                isPositive = false;
+            }
+            var all = FindObjectsOfType<GameObject>();
+            foreach (var item in all)
+            {
+                if (item.transform.CompareTag("Manager"))
+                {
+                    item.GetComponent<EnemiesRespawnManager>().AddEnemyToRespawnList(transform.position, isPositive);
+                }
+            }
             Destroy(gameObject);
+        }
+            
         moveRight = !moveRight;
-
     }
 }
 

@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     public float jumpStrength;
-
+    
     private bool isGrounded;
     private float lookDirection;
     public float FallSpeed;
@@ -22,6 +22,10 @@ public class Movement : MonoBehaviour
             lookDirection = Input.GetAxis("Horizontal");
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
         jumpSpeedDefine();
+        if(transform.position.y <= -3)
+        {
+            respwan();
+        }
     }
     private void Update()
     {
@@ -101,6 +105,7 @@ public class Movement : MonoBehaviour
     private void respwan()
     {
         Debug.Log("Respawn");
+        GameWorld.Instance.RespawnEnemies();
         transform.position = respawnPoint;
     }
 

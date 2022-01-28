@@ -14,7 +14,10 @@ public class GameWorld : MonoBehaviour
         else
             Instance = this;
     }
-
+    public void RespawnEnemies()
+    {
+        GetComponent<EnemiesRespawnManager>().RespawnEnemies();
+    }
     public T GetManager<T>()
     {
         return GetComponent<T>();
