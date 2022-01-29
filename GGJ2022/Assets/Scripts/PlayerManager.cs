@@ -34,8 +34,4 @@ public class PlayerManager : MonoBehaviour
     {
         playerCharge = charge;
     }
-    public void SetPlayerLocation(Vector3 pos)
-    {
-        Player.transform.position = pos;
-    }
 }

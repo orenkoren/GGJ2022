@@ -8,6 +8,11 @@ public class GameWorld : MonoBehaviour
 {
     public static GameWorld Instance;
     public GameObject Player;
+
+    private static bool isRespawnSet = false;
+    private static Vector3 reSpawnPosition;
+    private static string sceneName;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -16,17 +21,25 @@ public class GameWorld : MonoBehaviour
         else
             Instance = this;
     }
+
+    public static Vector3 GetPlayerRespawnPosition()
+    {
+        return reSpawnPosition;
+    }
+
     public void Respawn()
     {
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single); //GetComponent<RespawnManager>().GetRespawnScene()
-        GetComponent<PlayerManager>().SetPlayerLocation(new Vector3(-20,2,0));//GetComponent<RespawnManager>().GetRespawnPoint()
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
     public T GetManager<T>()
     {
         return GetComponent<T>();
     }
-
+    public static bool IsRespawnSet()
+    {
+        return isRespawnSet;
+    }
     public bool CollidedWithOpoositeCharge(ElectricCharge current, GameObject other)
     {
         return current == ElectricCharge.Positive && other.gameObject.CompareTag(ElectricCharge.Negative.ToString()) ||
@@ -38,6 +51,8 @@ public class GameWorld : MonoBehaviour
     }
     public void SetRespawnPoint(Vector3 pos)
     {
-        GetComponent<RespawnManager>().SetRespawn(pos, SceneManager.GetActiveScene().name);
+        reSpawnPosition = pos;
+        isRespawnSet = true;
+        sceneName = SceneManager.GetActiveScene().name;
     }
 }
