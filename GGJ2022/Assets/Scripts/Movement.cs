@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -117,7 +118,7 @@ public class Movement : MonoBehaviour
     private void changeRespawnPoint()
     {
         respawnPoint = transform.position;
-        GameWorld.Instance.SetRespawnPoint(respawnPoint);
+        GameWorld.Instance.SetRespawnPoint(respawnPoint, SceneManager.GetActiveScene().name);
     }
 
     private void Respawn()

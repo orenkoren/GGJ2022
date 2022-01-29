@@ -51,10 +51,10 @@ public class GameWorld : MonoBehaviour
     {
         return new Vector3(-1000, -1000, -1000);
     }
-    public void SetRespawnPoint(Vector3 pos)
+    public void SetRespawnPoint(Vector3 pos, string i_sceneName)
     {
         reSpawnPosition = pos;
         isRespawnSet = true;
-        sceneName = SceneManager.GetActiveScene().name;
+        sceneName = i_sceneName;
     }
 }

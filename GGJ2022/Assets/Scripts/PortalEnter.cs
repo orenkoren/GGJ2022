@@ -8,7 +8,7 @@ public class PortalEnter : MonoBehaviour
     {
         if(other.transform.CompareTag("Player"))
         {
-            GameWorld.Instance.SetRespawnPoint(new Vector3(-12, 30, 0));
+            GameWorld.Instance.SetRespawnPoint(new Vector3(-12, 30, 0), "Level2");
             GameSceneManager.OpenLevel2Scence();
         }
     }
