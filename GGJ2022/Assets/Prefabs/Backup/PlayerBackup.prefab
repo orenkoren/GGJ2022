@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1994458110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1994458111}
+  m_Layer: 6
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1994458111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994458110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7610549079961664446}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147182547740886726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,10 +1758,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4541553463324725166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.96808, y: -0.38742086, z: -0.32978487}
-  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: -1}
+  m_LocalPosition: {x: -0.018, y: 2.552, z: -0.32978487}
+  m_LocalScale: {x: 0.23054224, y: 0.28291026, z: -1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1994458111}
   m_Father: {fileID: 8790010146416340192}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1746,13 +1778,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b262dc20a364982419b30876cd14a9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positiveProjectile: {fileID: 8691279097324507323, guid: 1c96fd4bb69436744b4e0b2e2dc21323, type: 3}
-  negativeProjectile: {fileID: 8691279097324507323, guid: c82b5b3b5eefccb4f9d1dd28ce809f54, type: 3}
+  positiveProjectile: {fileID: 0}
+  negativeProjectile: {fileID: 0}
   Player: {fileID: 8790010146416340184}
   NegativeWeapon: {fileID: 2100000, guid: 1846534abb98ed74f963ff7c2352bb6a, type: 2}
   PositiveWeapon: {fileID: 2100000, guid: 2bd51607d5b7e1d4c99b5349e193c6fc, type: 2}
   imagePlus: {fileID: 21300000, guid: 9948d1544012dbb4f9cb90c67a306e10, type: 3}
   imgaeMinus: {fileID: 21300000, guid: cd66f183c65fa304cb8cc01f564fa2d1, type: 3}
+  ShootPoint: {fileID: 1994458111}
 --- !u!212 &1687989782811012891
 SpriteRenderer:
   m_ObjectHideFlags: 0
