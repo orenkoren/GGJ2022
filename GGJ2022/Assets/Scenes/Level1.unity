@@ -5444,6 +5444,14 @@ PrefabInstance:
       propertyPath: ShootPoint
       value: 
       objectReference: {fileID: 1994458111}
+    - target: {fileID: 5905211012943651982, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
+      propertyPath: negativeProjectile
+      value: 
+      objectReference: {fileID: 1455612796}
+    - target: {fileID: 5905211012943651982, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
+      propertyPath: positiveProjectile
+      value: 
+      objectReference: {fileID: 823452934}
     - target: {fileID: 7610549079961664446, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.23054224
