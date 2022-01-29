@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacle1 : MonoBehaviour
 {
     public Transform destination;
+    public GameObject toRemove;
     public float speed;
 
     private bool hasActivated;
@@ -21,7 +22,7 @@ public class Obstacle1 : MonoBehaviour
         if (!hasActivated)
             return;
         float step = speed * Time.deltaTime;
-        if(!hasReached)
+        if (!hasReached)
         {
             transform.position = Vector3.MoveTowards(transform.position, destination.position, step);
         }
@@ -46,7 +47,7 @@ public class Obstacle1 : MonoBehaviour
         if (collision.gameObject.transform == destination)
         {
             hasReached = true;
-            collision.transform.position = GameWorld.GarbagePosition(); // change position and not destroy to avoid prefab instance for respawn
+            toRemove.transform.position = GameWorld.GarbagePosition(); // change position and not destroy to avoid prefab instance for respawn
         }
     }
 }
