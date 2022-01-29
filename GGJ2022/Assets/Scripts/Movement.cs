@@ -85,8 +85,9 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Respawn"))
+        if (other.gameObject.CompareTag("RespawnPoint"))
         {
+            Debug.Log("RespawnPointReset");
             changeRespawnPoint();
         }
     }
