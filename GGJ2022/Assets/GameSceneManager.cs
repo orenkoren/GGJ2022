@@ -10,6 +10,7 @@ public class GameSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
+
     public static void OpenLevel2Scence()
     {
         SceneManager.LoadScene("Level2", LoadSceneMode.Single);

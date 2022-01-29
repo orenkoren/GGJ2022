@@ -36,10 +36,12 @@ public class GameWorld : MonoBehaviour
     {
         return GetComponent<T>();
     }
+
     public static bool IsRespawnSet()
     {
         return isRespawnSet;
     }
+
     public bool CollidedWithOpoositeCharge(ElectricCharge current, GameObject other)
     {
         return current == ElectricCharge.Positive && other.gameObject.CompareTag(ElectricCharge.Negative.ToString()) ||
