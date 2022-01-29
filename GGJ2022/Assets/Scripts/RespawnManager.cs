@@ -5,52 +5,23 @@ using UnityEngine;
 
 public class RespawnManager : MonoBehaviour
 {
-    public GameObject PositiveEnemyPref;
-    public GameObject NegativeEnemyPref;
+    private static Vector3 reSpawnPosition;
+    private static string sceneName;
+
     public static RespawnManager Instance;
 
-    private List<Respawn> ObjectToRspawn;
-
-    public void Start()
+    public void SetRespawn(Vector3 pos, string scence)
     {
-        ObjectToRspawn = new List<Respawn>();
+        reSpawnPosition = pos;
+        sceneName = scence;
     }
-
-    public class Respawn
+    
+    public Vector3 GetRespawnPoint()
     {
-        public Respawn(Vector3 pos, string name)
-        {
-            SpawnPosition = pos;
-            Name = name;
-        }
-        public Vector3 SpawnPosition;
-        public string Name;
+        return reSpawnPosition;
     }
-
-    public void AddObjectToRespawnList(Vector3 pos, string name)
+    public string GetRespawnScene()
     {
-        ObjectToRspawn.Add(new Respawn(pos, name));
-    }
-
-    public void RespawnObjects()
-    {
-        foreach (Respawn objToRespawn in ObjectToRspawn)
-        {
-            if (objToRespawn.Name == "PositiveEnemy")
-            {
-                Instantiate(PositiveEnemyPref, objToRespawn.SpawnPosition, new Quaternion(0, 0, 0, 0));
-            }
-            else if(objToRespawn.Name == "NegativeEnemy")
-            {
-                Instantiate(NegativeEnemyPref, objToRespawn.SpawnPosition, new Quaternion(0, 0, 0, 0));
-            }
-            else if (objToRespawn.Name == "Platform")
-            {
-                GameObject obj = GameObject.Find("Platform");
-                Debug.Log(obj.transform.name + " Respawn!~!");
-                obj.transform.position = objToRespawn.SpawnPosition;
-            }
-        }
-        ObjectToRspawn.Clear();
+        return sceneName;
     }
 }
