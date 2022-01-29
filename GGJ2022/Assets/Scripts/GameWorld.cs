@@ -21,10 +21,15 @@ public class GameWorld : MonoBehaviour
         else
             Instance = this;
     }
+
+    public static Vector3 GetPlayerRespawnPosition()
+    {
+        return reSpawnPosition;
+    }
+
     public void Respawn()
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        GetComponent<PlayerManager>().SetPlayerLocation(reSpawnPosition);
     }
 
     public T GetManager<T>()
