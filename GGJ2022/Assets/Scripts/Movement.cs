@@ -85,7 +85,7 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("RespawnPoint"))
+        if (other.gameObject.CompareTag("Respawn"))
         {
             changeRespawnPoint();
         }
@@ -101,7 +101,7 @@ public class Movement : MonoBehaviour
     private void changeRespawnPoint()
     {
         respawnPoint = transform.position;
-        GameWorld.Instance.SetRespawnPoint(respawnPoint, "Level1");
+        GameWorld.Instance.SetRespawnPoint(respawnPoint);
     }
 
     private void Respawn()

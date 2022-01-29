@@ -36,8 +36,8 @@ public class GameWorld : MonoBehaviour
     {
         return new Vector3(-1000, -1000, -1000);
     }
-    public void SetRespawnPoint(Vector3 pos, string scence)
+    public void SetRespawnPoint(Vector3 pos)
     {
-        GetComponent<RespawnManager>().SetRespawn(pos, scence);
+        GetComponent<RespawnManager>().SetRespawn(pos, SceneManager.GetActiveScene().name);
     }
 }
