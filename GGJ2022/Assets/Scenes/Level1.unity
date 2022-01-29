@@ -2869,11 +2869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413918429045197331, guid: 2d62e0fdf0c05634eb186de10f23f4fb, type: 3}
       propertyPath: Speed
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6413918429045197331, guid: 2d62e0fdf0c05634eb186de10f23f4fb, type: 3}
       propertyPath: PatrolRadius
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7698071998216240323, guid: 2d62e0fdf0c05634eb186de10f23f4fb, type: 3}
       propertyPath: m_Name
@@ -4125,7 +4125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fede1597445f5044b7ab1c80f752f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {x: 11, y: 3, z: -12}
+  cameraOffset: {x: 15.67, y: 6.2, z: -21.58}
   Player: {fileID: 712171427}
 --- !u!81 &1695712434
 AudioListener:
@@ -5496,18 +5496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7610549079961664446, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610549079961664446, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610549079961664446, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8790010146416340184, guid: 5385a96d60ae63f4d97130c582c59b8c, type: 3}
       propertyPath: m_Name
       value: Player
