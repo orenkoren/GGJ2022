@@ -14,7 +14,10 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        respawnPoint = transform.position;
+        if(!GameWorld.IsRespawnSet())
+        {
+            respawnPoint = transform.position;
+        }
     }
     private void FixedUpdate()
     {
