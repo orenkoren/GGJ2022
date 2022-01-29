@@ -2949,6 +2949,14 @@ PrefabInstance:
       propertyPath: PatrolRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6821823945143871173, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821823945143871173, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 7698071998216240323, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
       propertyPath: m_Name
       value: PositiveEnemy (3)
@@ -3572,6 +3580,14 @@ PrefabInstance:
     - target: {fileID: 7698071998216240323, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
       propertyPath: m_Name
       value: PositiveEnemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801076776680337780, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.779865
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801076776680337780, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
+      propertyPath: m_Center.y
+      value: -0.81077975
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
