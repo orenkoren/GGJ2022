@@ -1174,6 +1174,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PositiveEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7801076776680337780, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2777424
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801076776680337780, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
+      propertyPath: m_Center.y
+      value: -0.061839104
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
 --- !u!1 &690939655
