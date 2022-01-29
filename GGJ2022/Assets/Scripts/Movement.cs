@@ -36,11 +36,12 @@ public class Movement : MonoBehaviour
         if(GetLookDirection() == LookDirection.Left)
         {
             transform.rotation = new Quaternion(0,180,0,0);
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, -1);
         }
         else
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
-
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1);
         }
     }
     private void jumpSpeedDefine()
@@ -100,13 +101,12 @@ public class Movement : MonoBehaviour
     private void changeRespawnPoint()
     {
         respawnPoint = transform.position;
+        GameWorld.Instance.SetRespawnPoint(respawnPoint, "Level1");
     }
 
     private void Respawn()
     {
-        Debug.Log("Respawn");
-        GameWorld.Instance.RespawnEnemies();
-        transform.position = respawnPoint;
+        GameWorld.Instance.Respawn();
     }
 
     public LookDirection GetLookDirection()

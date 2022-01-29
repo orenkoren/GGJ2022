@@ -50,7 +50,6 @@ public class Enemy : MonoBehaviour
             GetComponent<EnemyEvents>().CollidedWithSameCharge(this, 0);
         if (GameWorld.Instance.CollidedWithOpoositeCharge(orientation, other.gameObject))
         {
-            GameWorld.Instance.GetManager<RespawnManager>().AddObjectToRespawnList(transform.position, transform.tag);
             Destroy(gameObject);
         }
             

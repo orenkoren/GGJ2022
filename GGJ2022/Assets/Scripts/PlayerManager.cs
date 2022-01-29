@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public GameObject Player;
+    public static PlayerManager Instance;
 
     private ElectricCharge playerCharge;
 
@@ -32,5 +33,9 @@ public class PlayerManager : MonoBehaviour
     public void SetPlayerCharge(ElectricCharge charge)
     {
         playerCharge = charge;
+    }
+    public void SetPlayerLocation(Vector3 pos)
+    {
+        Player.transform.position = pos;
     }
 }
