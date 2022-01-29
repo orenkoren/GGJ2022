@@ -9,7 +9,10 @@ public class Shoot : MonoBehaviour
     public GameObject Player;
     public Material NegativeWeapon;
     public Material PositiveWeapon;
-   
+    public Sprite imagePlus;
+    public Sprite imgaeMinus;
+
+    private bool isPlus = true;
     private GameObject currentProjectile;
     private bool canShoot = true;
     private PlayerManager playerManager;
@@ -27,11 +30,9 @@ public class Shoot : MonoBehaviour
             return;
         if (Input.GetKeyDown(KeyCode.Q))
         {
-             GetComponent<MeshRenderer>().material = NegativeWeapon;
             if (currentProjectile == positiveProjectile)
             {
                 currentProjectile = negativeProjectile;
-                GetComponent<MeshRenderer>().material = PositiveWeapon;
                 playerManager.SetPlayerCharge(ElectricCharge.Negative);
             }
             else
@@ -39,6 +40,7 @@ public class Shoot : MonoBehaviour
                 currentProjectile = positiveProjectile;
                 playerManager.SetPlayerCharge(ElectricCharge.Positive);
             }
+            swapWeaponImage();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftAlt))
@@ -48,7 +50,19 @@ public class Shoot : MonoBehaviour
             
         }
     }
-
+    private void swapWeaponImage()
+    {
+        if (isPlus)
+        {
+            isPlus = false;
+            GetComponent<SpriteRenderer>().sprite = imgaeMinus;
+        }
+        else
+        {
+            isPlus = true;
+            GetComponent<SpriteRenderer>().sprite = imagePlus;
+        }
+    }
     public void EnableWeapons()
     {
         canShoot = true;
