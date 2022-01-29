@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     public float jumpStrength;
-    
+
     private bool isGrounded;
     private float lookDirection;
     public float FallSpeed;
@@ -19,10 +19,15 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         if (Input.GetAxis("Horizontal") != 0)
+        {
             lookDirection = Input.GetAxis("Horizontal");
+            GetComponentInChildren<Animator>().SetBool("Running", true);
+        }
+        else
+            GetComponentInChildren<Animator>().SetBool("Running", false);
         transform.position = new Vector3(transform.position.x + Input.GetAxis("Horizontal") * speed, transform.position.y, transform.position.z);
         jumpSpeedDefine();
-        if(transform.position.y <= -30)
+        if (transform.position.y <= -30)
         {
             Respawn();
         }
@@ -33,9 +38,9 @@ public class Movement : MonoBehaviour
         {
             Jump();
         }
-        if(GetLookDirection() == LookDirection.Left)
+        if (GetLookDirection() == LookDirection.Left)
         {
-            transform.rotation = new Quaternion(0,180,0,0);
+            transform.rotation = new Quaternion(0, 180, 0, 0);
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, -1);
         }
         else
@@ -51,7 +56,7 @@ public class Movement : MonoBehaviour
         {
             rb.velocity += Vector3.up * Physics.gravity.y * FallSpeed * Time.deltaTime;
         }
-        else if(rb.velocity.y > 0 && !Input.GetButton ("Jump"))
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             rb.velocity += Vector3.down * Physics.gravity.y * JumpSpeed * Time.deltaTime;
         }
@@ -60,6 +65,7 @@ public class Movement : MonoBehaviour
     private void Jump()
     {
         GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
+        GetComponentInChildren<Animator>().SetTrigger("Jump");
     }
 
     private void OnCollisionEnter(Collision collider)
@@ -68,7 +74,7 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (collider.gameObject.CompareTag("PositiveEnemy")||
+        if (collider.gameObject.CompareTag("PositiveEnemy") ||
             collider.gameObject.CompareTag("NegativeEnemy"))
         {
             Respawn();
