@@ -11,7 +11,7 @@ public class Shoot : MonoBehaviour
     public Material PositiveWeapon;
     public Sprite imagePlus;
     public Sprite imgaeMinus;
-
+    public Transform ShootPoint;
     private bool isPlus = true;
     private GameObject currentProjectile;
     private bool canShoot = true;
@@ -45,9 +45,8 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            GameObject projectile = Instantiate(currentProjectile, transform.position, transform.rotation);
-            projectile.GetComponent<Projectile>().Init(Player.GetComponent<Movement>().GetLookDirection() == LookDirection.Left ? -1 : 1);
-            
+            GameObject projectile = Instantiate(currentProjectile, ShootPoint.position, transform.rotation);
+            projectile.GetComponent<Projectile>().Init(Player.GetComponent<Movement>().GetLookDirection() == LookDirection.Left ? -1 : 1);   
         }
     }
     private void swapWeaponImage()

@@ -20,6 +20,10 @@ public class Movement : MonoBehaviour
         {
             transform.position = GameWorld.GetPlayerRespawnPosition();
         }
+        else
+        {
+            changeRespawnPoint();
+        }
     }
     private void FixedUpdate()
     {
