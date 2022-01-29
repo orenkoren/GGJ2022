@@ -18,14 +18,8 @@ public class GameWorld : MonoBehaviour
     }
     public void Respawn()
     {
-        SceneManager.UnloadSceneAsync("Level1");
-        SceneManager.sceneUnloaded += someFunc;
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single); //GetComponent<RespawnManager>().GetRespawnScene()
         GetComponent<PlayerManager>().SetPlayerLocation(new Vector3(-20,2,0));//GetComponent<RespawnManager>().GetRespawnPoint()
-    }
-
-    private void someFunc(Scene arg0)
-    {
-        SceneManager.LoadScene("Level1", LoadSceneMode.Additive); //GetComponent<RespawnManager>().GetRespawnScene()
     }
 
     public T GetManager<T>()

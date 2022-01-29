@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2343,7 +2343,6 @@ GameObject:
   - component: {fileID: 1029814649}
   - component: {fileID: 1029814648}
   - component: {fileID: 1029814647}
-  - component: {fileID: 1029814650}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Ground
@@ -2429,18 +2428,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029814645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1029814650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029814645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f243544f965507f42b82b65917975c7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1033913790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,6 +3723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3362a4719db140f48b9c94d3fb04dde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 712171419}
 --- !u!4 &1522730713
 Transform:
   m_ObjectHideFlags: 0
@@ -3763,8 +3751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabce438c6cd5604ca17d72386b5dd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositiveEnemyPref: {fileID: 7698071998216240323, guid: 2a40a54bffd626b4193797898ddfa20a, type: 3}
-  NegativeEnemyPref: {fileID: 7698071998216240323, guid: 2d62e0fdf0c05634eb186de10f23f4fb, type: 3}
 --- !u!1 &1536887739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,7 +4170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fede1597445f5044b7ab1c80f752f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {x: 10.4, y: 0.9, z: -22.2}
+  cameraOffset: {x: 11, y: 3, z: -12}
   Player: {fileID: 712171427}
 --- !u!81 &1695712434
 AudioListener:
@@ -7347,12 +7333,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2147
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2147
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.5
+      value: -19.3926
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 2.1853
       objectReference: {fileID: 0}
     - target: {fileID: 8319710597838320909, guid: 8c5506a3af4d69b4384a65a60b0c45a8, type: 3}
       propertyPath: m_LocalPosition.z
