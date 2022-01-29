@@ -7,8 +7,6 @@ public class Enemy : MonoBehaviour
     public float PatrolRadius;
 
     private Vector3 startPosition;
-    private PlayerManager playerManager;
-    private bool shouldMove = true;
     private bool moveRight = true;
 
     private void Start()
@@ -23,11 +21,13 @@ public class Enemy : MonoBehaviour
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition,
                 new Vector3(transform.localPosition.x + 0.5f, transform.localPosition.y, transform.localPosition.z), step);
+            transform.rotation = new Quaternion(0, 180, 0, 0); // flip 
         }
         else
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition,
                 new Vector3(transform.localPosition.x - 0.5f, transform.localPosition.y, transform.localPosition.z), step);
+            transform.rotation = new Quaternion(0, 0, 0, 0); // flip 
         }
         moveDirection();
     }
